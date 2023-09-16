@@ -4,8 +4,9 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <unistd.h>
 
-#define OUTPUT_BUF_SIZE 1024
+#define OUTPUT_BUFF_SIZE 1024
 #define PARAMS_INT (0, 0, 0, 0, 0)
 
 #define CONVERT_LOWERCASE
