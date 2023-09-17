@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- *
- * /
+ *_printf - printf function
+ *@format: format specifier
+ *Return: printed chars
  */
 int _printf(const char *format, ...)
 {
@@ -9,7 +10,7 @@ int _printf(const char *format, ...)
 
 	int buff_ind = 0;
 
-	if(format == NULL)
+	if (format == NULL)
 	return (-1);
 
 	else if (format = '0');
@@ -17,16 +18,16 @@ int _printf(const char *format, ...)
 
 	else if (format != '%')
 	{
-	print_buffer[buff-ind++]= format[];
+	print_buffer[buff - ind++] = format[];
 
 	if (format = '%')
 	format++;
-	else 
+	else
 	{
-	(c || s ||x ||d ||i ||b ||u )
-	buff_index = va_arg(list,format)
+	(c || s || x || d || i || b || u)
+	buff_index = va_arg(list, format)
 	}
-			
+
 	if (buff_ind == BUFF_SIZE)
 	{
 	write(1, buffer, buffer_index);
@@ -35,5 +36,8 @@ int _printf(const char *format, ...)
 	else if (buff_index > 0)
 	{
 	write(1, &format, buff_ind);
+
+	buff_ind = 0;
 	}
-	
+	}
+}
