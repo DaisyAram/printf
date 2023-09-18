@@ -1,43 +1,28 @@
 #include "main.h"
 /**
- *_printf - printf function
- *@format: format specifier
- *Return: printed chars
+ * _printf - printf function
+ * @*format - pointer to a format
+ * Return: print_chars
  */
 int _printf(const char *format, ...)
 {
-	char buff[BUFF_SIZE];
+	int print_chars = 0;
 
-	int buff_ind = 0;
+	va_list args;
 
 	if (format == NULL)
 	return (-1);
 
-	else if (format = '0');
-	return (0);
-
-	else if (format != '%')
+	va_start(args, format);
+	while (*format != '\0')
 	{
-	print_buffer[buff - ind++] = format[];
-
-	if (format = '%')
+	if (*format != '%')
+	{
+	write (1, format, 1);
+	}
 	format++;
-	else
-	{
-	(c || s || x || d || i || b || u)
-	buff_index = va_arg(list, format)
 	}
+	va_end(args);
 
-	if (buff_ind == BUFF_SIZE)
-	{
-	write(1, buffer, buffer_index);
-	}
-	//(buffer[buff_index])//
-	else if (buff_index > 0)
-	{
-	write(1, &format, buff_ind);
-
-	buff_ind = 0;
-	}
-	}
+	return (print_chars);
 }
