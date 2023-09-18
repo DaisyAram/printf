@@ -1,7 +1,8 @@
 #include "main.h"
 /**
  * _printf - printf function
- * @*format - pointer
+ * @*format: pointer format
+ *
  * Return: print_chars
  */
 int _printf(const char *format, ...)
@@ -41,6 +42,7 @@ int _printf(const char *format, ...)
 	char c = va_arg(arg, int);
 	write(1, &c, 1);
 	print_chars++;
+
 	}
 	/**when the format is a string */
 	else if (*format == 's')
