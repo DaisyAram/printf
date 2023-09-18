@@ -7,7 +7,6 @@
 int _printf(const char *format, ...)
 {
 	int print_chars = 0;
-
 	va_list arg;
 
 	if (format == NULL)
@@ -43,7 +42,6 @@ int _printf(const char *format, ...)
 	write(1, &c, 1);
 	print_chars++;
 	}
-	
 	/**when the format is a string */
 	else if (*format == 's')
 	{
