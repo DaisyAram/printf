@@ -33,11 +33,7 @@ int main(void)
 {
 	int num = 42;
 
-<<<<<<< HEAD
-	my_printf("This is a number: %d\n", num);
+	my_printf("This is a number: %d\ and %i\n", num, num);
+
 	return (0);
-=======
-	_printf("Integer: %d\n", num);
-	return 0;
->>>>>>> 4177895b15f35c4adc0dc224be2bcca17f4c96d5
 }
