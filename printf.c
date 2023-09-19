@@ -1,9 +1,6 @@
 #include "main.h"
-/**
- * _printf - printf function
- * Return: print_chars
- */
-int _printf(const char *format, ...)
+
+int _printf(const char *format, ...);
 {
 	int print_chars = 0;
 	va_list args;
