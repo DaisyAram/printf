@@ -11,6 +11,7 @@
 
 void print_buffer(char buffer[], int *buff_ind);
 int _printf(const char *format, ...);
+void print_(const char *format, ...); 
 
 typedef struct parameters
 {
