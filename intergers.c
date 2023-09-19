@@ -9,7 +9,7 @@ void print_int(const char *format, ...)
 {
 	va_list args;
 	int i;
-       	int print_chars = 0;
+	int print_chars = 0;
 
 	va_start(args, format);
 	while (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
@@ -20,7 +20,7 @@ void print_int(const char *format, ...)
 	{
 	case 'd':
 	i = va_arg(args, int);
-	write( 1, &i, 1); /** print the 'd' associated with '%' */
+	write(1, &d, 1); /** print the 'd' associated with '%' */
 	print_chars++;/** move to the next char */
 	break;
 	}
@@ -34,5 +34,4 @@ void print_int(const char *format, ...)
 	format++;
 	}
 	va_end(args);
-	
 }
