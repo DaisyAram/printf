@@ -79,8 +79,11 @@ int main(void)
 	char *s = "Our first printf task";
 
 	_printf("This is %s\n", s);
-	_printf(" Alphabet: %c\n", c);
+	_printf("Alphabet: %c\n", c);
 	_printf("Our first printf task\n");
+	_printf("%%\n");
+	_printf(" \n");
+
 
 	return (0);
 }
