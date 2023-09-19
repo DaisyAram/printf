@@ -1,35 +1,38 @@
-#include <stdio.h>
-#include <stdarg.h>
+#include "main.h"
+/**
+ * print_int: prints integer
+ *
+ * Return: printed_chars
+ */
 
-void my_printf(const char *format, ...)
+void print_int(const char *format, ...)
 {
 	va_list args;
+	int i;
+       	int print_chars = 0;
 
 	va_start(args, format);
-
-	while (*format)
+	while (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
 	{
-	if (*format == '%' && (*(format + 1) == 'd' || *(format + 1) == 'i'))
+	if (*format == '%')/** if the format has a placeholder '%' */
+	print_chars++; /* Move to the next character */
+	switch (*format)
 	{
-		int value = va_arg(args, int);
-
-		printf("%d", value);
-		format += 2; /* Skip %d or %i */
+	case 'd':
+	i = va_arg(args, int);
+	write( 1, &i, 1); /** print the 'd' associated with '%' */
+	print_chars++;/** move to the next char */
+	break;
 	}
-	else
+	}
+	if (*format != 'd')
+	write(1, format, 1);
+	else /** if format does not have '%'*/
 	{
-	putchar(*format);
+	write(1, format, 1);
+	print_chars++;/** move to the next character */
 	format++;
 	}
-	}
-
 	va_end(args);
-}
-
-int main(void)
-{
-	int num = 42;
-
-	my_printf("This is a number: %d\n", num);
-	return (0);
+	
 }

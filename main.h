@@ -8,7 +8,7 @@
 #include <string.h>
 
 #define BUFF_SIZE 1024
-
+int _putchar(char c);
 void print_buffer(char buffer[], int *buff_ind);
 int _printf(const char *format, ...);
 void print_(const char *format, ...);
