@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * _printf - Printf function
+ * @format: format
+ *
+ * Return: Print_charsi
+ */
 int _printf(const char *format, ...)
 {
 	int print_chars = 0;
