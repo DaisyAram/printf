@@ -20,7 +20,7 @@ void print_int(const char *format, ...)
 	{
 	case 'd':
 	i = va_arg(args, int);
-	write(1, &d, 1); /** print the 'd' associated with '%' */
+	write(1, &i, 1); /** print the 'd' associated with '%' */
 	print_chars++;/** move to the next char */
 	break;
 	}
