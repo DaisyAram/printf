@@ -2,18 +2,19 @@
 /**
  * _printf - printf function
  * @*format: pointer format
- *
+ * @format: parameters
  * Return: print_chars
  */
 int _printf(const char *format, ...)
 {
 	int print_chars = 0;
-	va_list arg;
+
+	va_list args;
 
 	if (format == NULL)
 	return (-1);
 
-	va_start(arg, format);
+	va_start(args, format);
 	/** when the format is not zero, while loop is incoporated */
 	while (*format != '\0')
 	{
@@ -36,10 +37,11 @@ int _printf(const char *format, ...)
 	write(1, "%%", 1);
 	print_chars++;
 	}
+
 	/**when the format is a character */
 	else if (*format == 'c')
 	{
-	char c = va_arg(arg, int);
+	char c = va_arg(args, int);
 	write(1, &c, 1);
 	print_chars++;
 
@@ -47,7 +49,7 @@ int _printf(const char *format, ...)
 	/**when the format is a string */
 	else if (*format == 's')
 	{
-	char *str = va_arg(arg, char*);
+	char *str = va_arg(args, char *);
 	int str_len = 0;
 
 	/** string length */
@@ -58,10 +60,27 @@ int _printf(const char *format, ...)
 	print_chars += str_len;
 	}
 	}
-	/** the while loop countinuea untill all variables are satisfied */
+	/** the while loop countinues untill all variables are satisfied */
 	format++;
 	}
-	va_end(arg);
+	va_end(args);
 
 	return (print_chars);
+}
+/** main function to test the code above*/
+/**
+ * Entry - check the code
+ *
+ * Return: 0 Always
+ */
+int main(void)
+{
+	char c = 'b';
+	char *s = "Our first printf task";
+
+	_printf("This is %s\n", s);
+	_printf(" Alphabet: %c\n", c);
+	_printf("Our first printf task\n");
+
+	return (0);
 }
