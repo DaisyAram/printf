@@ -9,6 +9,7 @@
 
 #define BUFF_SIZE 1024
 
+int putchar(char c);
 int _printf(const char *format, ...);
 
 typedef struct parameters
