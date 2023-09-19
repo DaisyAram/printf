@@ -9,7 +9,7 @@
 
 #define BUFF_SIZE 1024
 
-int putchar(char c);
+void print_buffer(char buffer[], int *buff_ind);
 int _printf(const char *format, ...);
 
 typedef struct parameters

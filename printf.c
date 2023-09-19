@@ -1,14 +1,11 @@
 #include "main.h"
 /**
  * _printf - printf function
- * @*format: pointer format
- * @format: parameters
  * Return: print_chars
  */
 int _printf(const char *format, ...)
 {
 	int print_chars = 0;
-
 	va_list args;
 
 	if (format == NULL)
@@ -37,14 +34,12 @@ int _printf(const char *format, ...)
 	write(1, "%%", 1);
 	print_chars++;
 	}
-
 	/**when the format is a character */
 	else if (*format == 'c')
 	{
 	char c = va_arg(args, int);
 	write(1, &c, 1);
 	print_chars++;
-
 	}
 	/**when the format is a string */
 	else if (*format == 's')
